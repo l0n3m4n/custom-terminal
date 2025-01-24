@@ -1,6 +1,6 @@
 # Linux terminal (ohmyzsh)
 
-<p align="center"><img src="https://s3.amazonaws.com/ohmyzsh/oh-my-zsh-logo.png" alt="Oh My Zsh"></p>
+![ohmyzsh](/assets/ohmyzsh.png)
 
 <p align="center">
     <a href="https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2Fl0n3m4n%2Fcustom-terminal">
