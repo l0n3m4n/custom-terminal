@@ -57,9 +57,46 @@ This script automates the setup of a custom Zsh terminal environment for both Li
     ```
 
 2.  **Run the script:**
-    ```bash
-    ./customterm.sh
-    ```
+```bash
+# run script
+➜  customterm ./customterm.sh -a
+
+             _             _                 
+ ___ _ _ ___| |_ ___ _____| |_ ___ ___ _____ 
+|  _| | |_ -|  _| . |     |  _| -_|  _|     |
+|___|___|___|_| |___|_|_|_|_| |___|_| |_|_|_|
+        author: l0n3m4n | version:v1.0.0
+
+🔍 Checking System...
+🔑 Checking sudo access...
+✔ Sudo access confirmed.
+✔ zsh found.
+✔ curl found.
+✔ git found.
+🌐 Checking Internet...
+
+
+# help menu
+➜  customterm ./customterm.sh -h 
+
+             _             _                 
+ ___ _ _ ___| |_ ___ _____| |_ ___ ___ _____ 
+|  _| | |_ -|  _| . |     |  _| -_|  _|     |
+|___|___|___|_| |___|_|_|_|_| |___|_| |_|_|_|
+        author: l0n3m4n | version:v1.0.0
+
+Usage: customterm.sh [-h] [-all] [-p] [-r]
+  -h: Display this help message.
+  -a: Perform a non-interactive installation with all recommended settings.
+  -p: Show important paths \(e.g., .zshrc, custom plugin directory\).
+  -r: Remove Oh-My-Zsh, plugins, theme, and clean .zshrc.
+
+Examples:
+  customterm.sh -h
+  sudo customterm.sh -a
+  customterm.sh -p
+  sudo customterm.sh -r
+```
 
     The script will guide you through the installation process, asking for confirmation before making changes.
 
