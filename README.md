@@ -46,6 +46,7 @@ Customterm automates the setup of a custom Zsh terminal environment for both Lin
 
 1.  **Clone the repository (or download the script):**
     ```bash
+    sudo apt install zsh -y 
     git clone https://github.com/l0n3m4n/customterm.git
     cd customterm
     ```
