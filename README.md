@@ -1,6 +1,6 @@
 
 <h1 align="center">
-  Welcome to ohmyzsh customization
+Customterm 
 </h1>
 
 <p align="center">
@@ -21,56 +21,67 @@
     </a>
 </p>
 
-![ohmyzsh](/assets/ohmyzsh.png)
+This script automates the setup of a custom Zsh terminal environment for both Linux and macOS...
 
-![p10k](/assets/p10k.png)
+## Features
 
-## Install Oh my ZSH.
-```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
+*   Automated installation of Zsh, curl, and git (if not already present).
+*   Checks for amd64 architecture.
+*   Checks for internet connectivity and home directory writability.
+*   Automated installation of Oh-My-Zsh.
+*   Installs Powerlevel10k theme.
+*   Installs selected Zsh plugins: `zsh-autosuggestions`, `zsh-syntax-highlighting`, `fast-syntax-highlighting`, and `zsh-autocomplete`.
+*   Manages `.zshrc` configuration, including backup options.
+*   Idempotent installations: gracefully handles existing installations of Oh-My-Zsh and plugins.
+*   Sudo access check for dependency installation.
 
-## Install plugins.
-- autosuggesions plugin
-```bash 
-git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
-```
-- zsh-syntax-highlighting plugin
-```bash
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-```
-- zsh-fast-syntax-highlighting plugin
-```bash
-git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
-```
- - zsh-autocomplete plugin
-```bash
-git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
-```
-	
-## Enable plugins by adding them to .zshrc.
- - Open .zshrc
-```bash	
-nano ~/.zshrc
-```
- -  Find the line which says `plugins=(git)`.
-	
- -  Replace that line with
-	- plugins=`(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete)`
+## Getting Started
 
-## zsh theme
-![theme-sample](/assets/theme-sample.jpg)
-```bash
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
-```
-- Open `~/.zshrc`, find the line that sets `ZSH_THEME`, and change its value to `"powerlevel10k/powerlevel10k"`.
-	- exit and restart terminal
-   	- In command terminal type `p10k -h` to configure
-## References
+### Prerequisites
 
- - [Oh my ZSH](https://github.com/ohmyzsh/ohmyzsh)
- - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
- - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
- - [zsh-fast-syntax-highlighting](https://github.com/zdharma/fast-syntax-highlighting)
- - [zsh-autocomplete](https://github.com/marlonrichert/zsh-autocomplete)
- - [zsh-theme](https://github.com/romkatv/powerlevel10k)
+*   A Linux distribution (tested on Debian/Ubuntu, Fedora, Arch-based systems) or macOS.
+*   `sudo` privileges for installing system dependencies (Linux only).
+*   Homebrew (for macOS users): The script will prompt to install it if not found.
+*   An active internet connection.
+### Installation
+
+1.  **Clone the repository (or download the script):**
+    ```bash
+    git clone https://github.com/yourusername/customterm.git # Replace with actual repo URL
+    cd customterm
+    ```
+    or simply download the `customterm.sh` script:
+    ```bash
+    curl -o customterm.sh https://raw.githubusercontent.com/yourusername/customterm/main/customterm.sh # Replace with actual raw URL
+    chmod +x customterm.sh
+    ```
+
+2.  **Run the script:**
+    ```bash
+    ./customterm.sh
+    ```
+
+    The script will guide you through the installation process, asking for confirmation before making changes.
+
+### Post-Installation
+
+After the script completes, it will prompt you to restart your shell. You can do this by typing `exec zsh` or by closing and reopening your terminal.
+
+You may then need to configure Powerlevel10k by running `p10k configure` in your new Zsh terminal.
+
+## Usage
+
+Simply run the script as described in the Installation section. It will interactively ask you about backups, plugin selections, and cleanup options.
+
+## Troubleshooting
+
+*   **"This script requires amd64 architecture on Linux."** or **"This script requires x86_64 or arm64 architecture on macOS."**: Ensure your system architecture is supported.
+*   **"No Internet Connection."**: Check your network connection.
+*   **"Sudo command not found..."** or **"you don't have password-less sudo access."**: Ensure `sudo` is installed and you have the necessary permissions. You might need to run the script with `sudo ./customterm.sh` if prompted.
+*   **Homebrew installation failed on macOS**: Check your internet connection and ensure you have sufficient permissions. You might need to run the Homebrew installation command manually from their official website.
+*   **Installation of `zsh`, `curl`, or `git` failed**: Your distribution might require a different package manager or manual installation. Install these dependencies manually and re-run the script.
+*   **Oh-My-Zsh / Plugin / Theme installation failed**: Check the log file (`~/.custom_terminal_install.log`) for details. Ensure you have proper internet connectivity and GitHub is accessible.
+
+## License
+
+This project is licensed under the MIT License - see the `LICENSE` file for details.
