@@ -27,7 +27,6 @@ This script automates the setup of a custom Zsh terminal environment for both Li
 
 *   Automated installation of Zsh, curl, and git (if not already present).
 *   Checks for amd64 architecture.
-*   Checks for internet connectivity and home directory writability.
 *   Automated installation of Oh-My-Zsh.
 *   Installs Powerlevel10k theme.
 *   Installs selected Zsh plugins: `zsh-autosuggestions`, `zsh-syntax-highlighting`, `fast-syntax-highlighting`, and `zsh-autocomplete`.
