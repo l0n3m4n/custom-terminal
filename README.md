@@ -21,7 +21,7 @@ Customterm
     </a>
 </p>
 
-This script automates the setup of a custom Zsh terminal environment for both Linux and macOS...
+Customterm automates the setup of a custom Zsh terminal environment for both Linux and macOS...
 
 ## Features
 
@@ -46,6 +46,7 @@ This script automates the setup of a custom Zsh terminal environment for both Li
 
 1.  **Clone the repository (or download the script):**
     ```bash
+    sudo apt install zsh -y 
     git clone https://github.com/l0n3m4n/customterm.git
     cd customterm
     ```
